@@ -1,0 +1,22 @@
+static vs dynamic pages
+static served from public directory
+
+idiom:
+--need a route
+ Failure/Error: visit '/static_pages/about'
+     ActionController::RoutingError:
+       No route matches [GET] "/static_pages/about"
+
+--need an action (+ controller)
+Failure/Error: visit '/static_pages/about'
+     AbstractController::ActionNotFound:
+       The action 'about' could not be found for StaticPagesController
+
+--need a view
+Failure/Error: visit '/static_pages/about'
+     ActionView::MissingTemplate:
+       Missing template static_pages/about, application/about with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+         * "/home/radar/workspace/cs380/sample_app/app/views"
+-- should have content
+ Failure/Error: page.should have_content('About')
+       expected there to be content "About" in "SampleApp\n\n\n\n"
