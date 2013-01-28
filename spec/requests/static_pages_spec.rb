@@ -8,9 +8,9 @@ describe "StaticPages" do
   		visit '/static_pages/home' 
   		page.should have_selector('title', :text => "#{static_title} | Home")
   	end
-    it "should have h2 'Sample App'" do
+    it "should have h1 'Sample App'" do
 	  visit '/static_pages/home'
-	  page.should have_selector('h1', :text=> 'Home')
+	  page.should have_selector('h1', :text=> "#{static_title}")
     end
   end
   describe "Help Page" do
